@@ -1,0 +1,126 @@
+{
+  "reviews": [
+    {
+      "professor": "Dr. Emily Johnson",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Johnson is an amazing professor. Her lectures are engaging and she is always available to help students during office hours. Highly recommend this class!"
+    },
+    {
+      "professor": "Dr. Michael Lee",
+      "subject": "Mechanical Engineering",
+      "stars": 4,
+      "review": "Dr. Lee's lectures are dry and sometimes difficult to follow, but he is very knowledgeable about the subject matter. The exams are challenging but fair."
+    },
+    {
+      "professor": "Dr. Olivia Garcia",
+      "subject": "Psychology",
+      "stars": 5,
+      "review": "Dr. Garcia is a fantastic professor. Her lectures are engaging and she is very approachable. I learned a lot in her class and would recommend it to anyone interested in psychology."
+    },
+    {
+      "professor": "Dr. William Chen",
+      "subject": "Economics",
+      "stars": 4,
+      "review": "Dr. Chen is a brilliant lecturer, but his grading is quite tough. The workload is heavy, but I feel like I gained a lot of valuable knowledge in his class."
+    },
+    {
+      "professor": "Dr. Sarah Kim",
+      "subject": "Biology",
+      "stars": 5,
+      "review": "Dr. Kim is passionate about her subject and it shows in her teaching. The labs are challenging but rewarding, and she is always willing to help students outside of class."
+    },
+    {
+      "professor": "Prof. David Gonzalez",
+      "subject": "History",
+      "stars": 4,
+      "review": "Prof. Gonzalez's lectures are engaging and he is very knowledgeable about the subject matter. The reading load is heavy, but the class discussions are always thought-provoking."
+    },
+    {
+      "professor": "Dr. Jessica Patel",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Patel is an exceptional professor. Her explanations are clear and she is always available to help students with coding assignments and projects. I learned a lot in her class."
+    },
+    {
+      "professor": "Prof. Marcos Ramirez",
+      "subject": "Business",
+      "stars": 3,
+      "review": "Prof. Ramirez's lectures can be dry and he doesn't always seem engaged with the material. The workload is heavy and the grading is quite strict. I wouldn't recommend this class to everyone."
+    },
+    {
+      "professor": "Dr. Sophia Nakamura",
+      "subject": "Environmental Science",
+      "stars": 4,
+      "review": "Dr. Nakamura is passionate about her subject and her lectures are always informative and thought-provoking. The group projects can be challenging, but they are a great way to apply the concepts we learn."
+    },
+    {
+      "professor": "Prof. Liam Nguyen",
+      "subject": "Political Science",
+      "stars": 4,
+      "review": "Prof. Nguyen is a knowledgeable and engaging lecturer. The class discussions are lively and he does a great job of encouraging participation. The workload is manageable and the grading is fair."
+    },
+    {
+      "professor": "Dr. Isabella Morales",
+      "subject": "Art History",
+      "stars": 5,
+      "review": "Dr. Morales is an exceptional professor. Her lectures are captivating and she has a deep understanding of the subject matter. The assignments are challenging but rewarding, and I feel like I gained a lot of valuable knowledge in her class."
+    },
+    {
+      "professor": "Prof. Lucas Hernandez",
+      "subject": "Mechanical Engineering",
+      "stars": 3,
+      "review": "Prof. Hernandez's lectures can be dry and he doesn't always explain the concepts clearly. The workload is heavy and the grading is quite strict. I struggled in this class and wouldn't recommend it to everyone."
+    },
+    {
+      "professor": "Dr. Ethan Flores",
+      "subject": "Psychology",
+      "stars": 4,
+      "review": "Dr. Flores is a knowledgeable and engaging professor. His lectures are thought-provoking and he is always willing to provide additional support to students. The workload is manageable and the grading is fair."
+    },
+    {
+      "professor": "Prof. Ava Diaz",
+      "subject": "English Literature",
+      "stars": 5,
+      "review": "Prof. Diaz is an exceptional professor. Her lectures are engaging and she has a deep understanding of the subject matter. The reading load is heavy, but the class discussions are always insightful and thought-provoking."
+    },
+    {
+      "professor": "Dr. Noah Gutierrez",
+      "subject": "Chemistry",
+      "stars": 4,
+      "review": "Dr. Gutierrez is a knowledgeable and approachable professor. The labs are challenging but rewarding, and he is always available to help students who are struggling with the material."
+    },
+    {
+      "professor": "Prof. Isabella Sanchez",
+      "subject": "Business",
+      "stars": 3,
+      "review": "Prof. Sanchez's lectures can be dry and she doesn't always provide clear explanations of the concepts. The workload is heavy and the grading is quite strict. I wouldn't recommend this class to everyone."
+    },
+    {
+      "professor": "Dr. Daniel Reyes",
+      "subject": "Computer Science",
+      "stars": 5,
+      "review": "Dr. Reyes is an amazing professor. His lectures are engaging and he is always available to help students with their coding projects. The assignments are challenging but rewarding, and I learned a lot in his class."
+    },
+    {
+      "professor": "Prof. Sophia Gomez",
+      "subject": "Sociology",
+      "stars": 4,
+      "review": "Prof. Gomez is a knowledgeable and engaging lecturer. The class discussions are always thought-provoking, and she does a great job of encouraging participation. The workload is manageable and the grading is fair."
+    },
+    {
+      "professor": "Dr. Lucas Ortiz",
+      "subject": "Physics",
+      "stars": 4,
+      "review": "Dr. Ortiz is a brilliant professor, but his lectures can be difficult to follow at times. The workload is heavy, but the labs are engaging and the material is fascinating. I'm glad I took this class."
+    },
+    {
+      "professor": "Prof. Mia Ramirez",
+      "subject": "Art History",
+      "stars": 5,
+      "review": "Prof. Ramirez is an exceptional professor. Her lectures are captivating and she has a deep understanding of the subject matter. The assignments are challenging but rewarding, and I feel like I gained a lot of valuable knowledge in her class."
+    }
+  
+  ]
+
+}

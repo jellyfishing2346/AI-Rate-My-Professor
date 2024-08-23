@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Pinecone } from "@pinecone-database/pinecone";
+import { ReadableStream } from "stream/web";
 import {OpenAI} from 'openai'
 
 const systemPrompt = `
@@ -26,7 +27,7 @@ Your goal is to help students make informed decisions about their course selecti
 
 export async function POST(req){
     const data = await req.json()
-     const pc = new Pinecone({
+    const pc = new Pinecone({
         apiKey: process.env.PINECONE_API_KEY,
      })
      const index = pc.index('rag').namespace('ns1')
@@ -62,7 +63,10 @@ export async function POST(req){
     const completion = await openai.chat.completions.create({
         messages: [
             {role: 'system', content: systemPrompt},
-            ...lastDataWithoutLastMessage,
+            ...lastDataWithoutLastMessage.map((msg) => ({
+                role: msg.role || 'user',
+                content: msg.content,
+            })),
             {role: 'user', content: lastMessageContent}
         ],
         model: 'gpt-4o-mini',
@@ -73,7 +77,7 @@ export async function POST(req){
         async start(controller){
             const encoder = new TextEncoder()
             try{
-                for await (const chunck of completion){
+                for await (const chunk of completion){
                     const content = chunk.choices[0]?.delta?.content
                     if (content){
                         const text= encoder.encode(content)

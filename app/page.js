@@ -13,6 +13,7 @@ export default function Home() {
    const [message, setMessage] = useState('')
    const sendMessage = async ()=>{
     setMessages((messages)=>[
+      ...messages,
       {role: "user", content: message},
       {role: "assistant", content: ''}
 
@@ -23,7 +24,6 @@ export default function Home() {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
-
       }, 
       body: JSON.stringify([...messages, {role: "user", content: message}])
     
@@ -37,7 +37,7 @@ export default function Home() {
             return result
           }
           const text = decoder.decode(value || new Uint8Array(), {stream: true})
-          setMessages((message)=>{
+          setMessages((messages)=>{
             let lastMessage = messages[messages.length - 1]
             let otherMessages = messages.slice(0, messages.length -1)
             return[
@@ -80,13 +80,11 @@ export default function Home() {
           display="flex" 
           justifyContent={message.role === "assistant" ? "flex-start" : 'flex-end'}>
             <Box 
-            bgcolor={
-              message.role === 'assistant' ? 'primary.main' : 'secondary.main'
-              }
+            bgcolor={ message.role === 'assistant' ? 'primary.main' : 'secondary.main'}
               color = "white"
               borderRadius={16}
               p={3}
-              >
+            >
               {message.content}
             </Box>
           </Box>

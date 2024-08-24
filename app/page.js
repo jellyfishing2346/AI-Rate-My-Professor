@@ -1,5 +1,7 @@
 'use client'
 import { TextField, Box, Stack, Button, Typography, AppBar, Toolbar, Container, Grid } from "@mui/material"; 
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 import Image from "next/image";
 import { useState } from 'react';
 
@@ -114,21 +116,44 @@ export default function Home() {
                   overflow='auto'
                   maxHeight='100%'
                 >
-                  {messages.map((message, index) => (
-                    <Box 
-                      key={index} 
-                      display="flex" 
-                      justifyContent={message.role === "assistant" ? "flex-start" : 'flex-end'}>
+                 {messages.map((message, index) => (
                       <Box 
-                        bgcolor={ message.role === 'assistant' ? 'primary.main' : 'secondary.main'}
-                        color = "white"
-                        borderRadius={16}
-                        p={3}
-                      >
-                        {message.content}
+                        key={index} 
+                        display="flex" 
+                        flexDirection="column" 
+                        alignItems={message.role === "user" ? "flex-end" : "flex-start"}>
+                        
+                        {message.role === "user" && (
+                          <Box display="flex" flexDirection="column" alignItems="flex-end">
+                            <AccountCircleIcon fontSize="large"/> 
+                            <Box 
+                              bgcolor='secondary.main'
+                              color="white"
+                              borderRadius={16}
+                              p={3}
+                              mt={1}
+                            >
+                              {message.content}
+                            </Box>
+                          </Box>
+                        )}
+                        
+                        {message.role === "assistant" && (
+                          <Box display={'flex'} flexDirection={'column'} alignItems={'flex-start'}>
+                            <SmartToyIcon fontSize="large"/>
+                            <Box 
+                              bgcolor='primary.main'
+                              color="white"
+                              borderRadius={16}
+                              p={3}
+                              mt={2}>
+                              {message.content}
+                            </Box>
+                          </Box>
+                        )}
                       </Box>
-                    </Box>
-                  ))}
+                      
+                    ))}
                 </Stack>
                 <Stack direction="row" spacing={2}>
                   <TextField

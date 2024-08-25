@@ -2,7 +2,7 @@
 import { TextField, Box, Stack, Button, Typography, AppBar, Toolbar, Container, Grid } from "@mui/material"; 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Home() {
 
@@ -13,6 +13,7 @@ export default function Home() {
     }
   ]);
   const [message, setMessage] = useState('');
+  const chatContainRef = useRef(null);
 
   const sendMessage = async () => {
     setMessages((messages) => [
@@ -21,6 +22,7 @@ export default function Home() {
       { role: "assistant", content: '' }
     ]);
     setMessage('');
+
 
     const response = fetch('/api/chat', {
       method: "POST",
@@ -51,13 +53,19 @@ export default function Home() {
     });
   }
 
+  useEffect(() => {
+    if(chatContainRef.current) {
+      chatContainRef.current.scrollTop = chatContainRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <>
       {/* Header */}
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">
-            AI Customer Service Chat
+            AI Rate My Professor Chat
           </Typography>
         </Toolbar>
       </AppBar>
@@ -86,7 +94,7 @@ export default function Home() {
           height={300}
           style={{ borderRadius: '8px' }}
             />
-            <Typography variant="caption" display="block" textAlign="center">
+            <Typography variant="caption" display={'block'} textAlign="center">
               Illustration of AI in action.
             </Typography>
           </Grid>
@@ -115,6 +123,7 @@ export default function Home() {
                   flexGrow={1}
                   overflow='auto'
                   maxHeight='100%'
+                  ref={chatContainRef}
                 >
                  {messages.map((message, index) => (
                       <Box 
@@ -178,7 +187,7 @@ export default function Home() {
       <Box component="footer" sx={{ bgcolor: 'background.paper', py: 6 }}>
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
-            AI Customer Service Chat
+            AI Rate My Professor Chat
           </Typography>
           <Typography variant="subtitle1" align="center" color="text.secondary" component="p">
             By Brian, GEO, Fei Lin and Faizan.

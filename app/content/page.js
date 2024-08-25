@@ -2,6 +2,7 @@
 import { TextField, Box, Stack, Button, Typography, AppBar, Toolbar, Container, Grid } from "@mui/material"; 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
+import ReactMarkdown from 'react-markdown';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Home() {
@@ -16,6 +17,9 @@ export default function Home() {
   const chatContainRef = useRef(null);
 
   const sendMessage = async () => {
+    if (message.trim() === '') 
+      return;
+
     setMessages((messages) => [
       ...messages,
       { role: "user", content: message },
@@ -58,6 +62,14 @@ export default function Home() {
       chatContainRef.current.scrollTop = chatContainRef.current.scrollHeight;
     }
   }, [messages]);
+
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { // Check for Enter key, ignore Shift+Enter
+      e.preventDefault(); // Prevent new line
+      sendMessage();
+    }
+  }
 
   return (
     <>
@@ -124,7 +136,7 @@ export default function Home() {
                   overflow='auto'
                   maxHeight='100%'
                   ref={chatContainRef}
-                >
+                  >
                  {messages.map((message, index) => (
                       <Box 
                         key={index} 
@@ -142,7 +154,7 @@ export default function Home() {
                               p={3}
                               mt={1}
                             >
-                              {message.content}
+                              <ReactMarkdown>{message.content}</ReactMarkdown>
                             </Box>
                           </Box>
                         )}
@@ -156,7 +168,9 @@ export default function Home() {
                               borderRadius={16}
                               p={3}
                               mt={2}>
-                              {message.content}
+                              <Typography sx={{ml:2}}>
+                              <ReactMarkdown>{message.content}</ReactMarkdown>
+                              </Typography>
                             </Box>
                           </Box>
                         )}
@@ -172,6 +186,7 @@ export default function Home() {
                     onChange={(e) => {
                       setMessage(e.target.value);
                     }}
+                    onKeyDown={handleKeyDown}
                   />
                   <Button variant="contained" onClick={sendMessage}>
                     Send
